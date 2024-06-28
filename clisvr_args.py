@@ -17,7 +17,10 @@ if __name__ == '__main__':
     parser.add_argument('role', choices=choices, help='which role to play')
     parser.add_argument('-p', metavar='PORT', type=int, default=1060,
                         help='UDP port (default 1060)')
+    parser.add_argument('-t', type=str, default=None)
     args = parser.parse_args()
     function = choices[args.role]
     print(function(args.p))
+    if args.t:
+        print(args.t)
 
